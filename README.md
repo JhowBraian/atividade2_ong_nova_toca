@@ -9,7 +9,7 @@ Desenvolvido com HTML5, CSS3 e JavaScript, aplicando semântica, formulários, m
 
 **Acesse o site**
 
-Versão publicada: https://jhowbraian.github.io/atividade1_ong_nova_toca/
+Versão publicada: https://jhowbraian.github.io/atividade2_ong_nova_toca/
 
 
 **Páginas do Projeto**
