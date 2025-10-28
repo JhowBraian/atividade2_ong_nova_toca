@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Página - Projeto Nova Toca</title> 
+    
+    <link rel="stylesheet" href="css/styler.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Voluntariado - Projeto Nova Toca</title>    
@@ -165,63 +171,6 @@
         </div>
     </footer>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- 1. Script de Auto-preenchimento do CEP ---
-            const cepInput = document.getElementById('cep');
-            if (cepInput) {
-                cepInput.addEventListener('keyup', (e) => {
-                    const cep = e.target.value.replace(/\D/g, '');
-                    if (cep.length === 8) {
-                        fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                            .then(response => response.json())
-                            .then(data => {
-                                if (!data.erro) {
-                                    document.getElementById('logradouro').value = data.logradouro;
-                                    document.getElementById('bairro').value = data.bairro;
-                                    document.getElementById('cidade').value = data.localidade;
-                                    document.getElementById('uf').value = data.uf;
-                                    document.getElementById('numero').focus();
-                                } else {
-                                    console.log('CEP não encontrado.');
-                                    document.getElementById('logradouro').value = "";
-                                    document.getElementById('bairro').value = "";
-                                    document.getElementById('cidade').value = "";
-                                    document.getElementById('uf').value = "";
-                                }
-                            })
-                            .catch(error => console.error('Erro ao buscar CEP:', error));
-                    }
-                });
-            }
-
-            // --- 2. Script de Validação de Formulário ---
-            const form = document.getElementById('volunteer-form');
-            const messageContainer = document.getElementById('message-container');
-            
-            if (form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    messageContainer.className = '';
-                    messageContainer.textContent = '';
-                    
-                    if (form.checkValidity()) {
-                        messageContainer.className = 'success';
-                        messageContainer.textContent = 'Formulário enviado com sucesso! Entraremos em contato em breve.';
-                        form.reset();
-                        messageContainer.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                        messageContainer.className = 'error';
-                        messageContainer.textContent = 'Por favor, preencha todos os campos obrigatórios corretamente.';
-                        const firstInvalidField = form.querySelector(':invalid');
-                        if (firstInvalidField) firstInvalidField.focus();
-                    }
-                });
-            }
-            
-        });
-    </script>
-    
+   
 </body>
 </html>
