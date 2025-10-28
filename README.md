@@ -38,7 +38,7 @@ Esta versão do projeto implementa um robusto sistema de CSS3 e JavaScript para 
 ### 1. HTML5
 * **HTML Semântico:** Uso correto de tags como `<header>`, `<main>`, `<footer>`, `<nav>`, `<section>` e `<article>` para melhor estrutura e acessibilidade.
 
-_
+
 
 ### 2. CSS3 (em `css/styler.css`)
 * **Design System com Variáveis CSS:**
